@@ -56,11 +56,15 @@ function createPlayer(playerNumber) {
     return player;
 };
 
+function damage() {
+    let damage = Math.ceil(Math.random() * 20);
+    return damage;
+}
+
 function changeHP(player) {
     const playerLife = document.querySelector('.player' + player.player + ' .life');
 
-    //вариант 1
-    player.hp -= Math.ceil(Math.random() * 20);
+    player.hp -= damage();
     playerLife.style.width = player.hp + '%';
     console.log(player.hp);
 
